@@ -31,3 +31,13 @@
         </tr>
     </tbody>
 </table>
+
+## About
+
+This project aims to create a CRUD-type web application on primary and secondary schools in France. Data on these establishments is stored in a .csv file: `data/ fr-en-adresse-et-geolocalisation-etablissements-premier-et-second-degre.csv`.
+
+In this web application, we therefore had to list all the schools but also display one in detail, be able to modify them as well as delete them. In addition, we also had to make filters, i.e. to be able to display schools according to department, region, municipality, academy, sector (private or public) and nature (the type of school). In addition to that, we also had to be able to geolocate schools on a map, but also be able to add comments to these places (see, create, modify and delete comments).
+
+The data displayed for each establishment were as follows: identifier, name, nature, sector, longitude and latitude for location on the map, address, department, municipality, region, academy , its opening date as well as its associated comments. The comments had as fields: an identifier, the name of the author, its creation date, a score from 1 to 5 and a text (the comment).
+
+> This project aimed to teach us how to use <a href="https://symfony.com/">Symfony</a> and how to create forms with this framework.
