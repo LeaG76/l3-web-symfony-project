@@ -153,6 +153,7 @@ php bin/console doctrine:schema:create
 ├── README.md
 ├── src/
 ├── symfony.lock
+├── symfony_tools.txt
 ├── templates/
 ├── tests/
 ├── translations/
