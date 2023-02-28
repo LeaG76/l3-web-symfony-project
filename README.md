@@ -35,7 +35,7 @@
 
 ## About
 
-This project aims to create a CRUD-type web application on primary and secondary schools in France. Data on these establishments is stored in a .csv file: `data/ fr-en-adresse-et-geolocalisation-etablissements-premier-et-second-degre.csv`.
+This project aims to create a CRUD-type web application on primary and secondary schools in France. Data on these establishments is stored in a .csv file: `data/fr-en-adresse-et-geolocalisation-etablissements-premier-et-second-degre.csv`.
 
 In this web application, we therefore had to list all the schools but also display one in detail, be able to modify them as well as delete them. In addition, we also had to make filters, i.e. to be able to display schools according to department, region, municipality, academy, sector (private or public) and nature (the type of school). In addition to that, we also had to be able to geolocate schools on a map, but also be able to add comments to these places (see, create, modify and delete comments).
 
