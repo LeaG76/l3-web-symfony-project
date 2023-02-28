@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/visualisationCom.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}Entité Commentaire{% endblock %}
+
+{% block body %}
+    <h1>Entité Commentaire</h1>
+    <h2>{{vu}}</h2>
+    <div class='lienH'>{{ knp_pagination_render(articles) }}</div>
+    <table border=1><tr><th>id</th><th>etablissement_id</th><th>texte</th><th>nom_auteur</th><th>date_creation</th><th>note</th><th>actions</th></tr><tr>
+    {% for com in articles %}
+        <td class='gauche'>{{com.id}}</td>
+        <td class='gauche'>{{com.getEtablissement().getId()}}</td>
+        <td class='gauche'>«{{com.texte}}»</td>
+        <td class='gauche'>{{com.nomAuteur}}</td>
+        <td class='droite'>{{com.dateCreation|format_date()}}</td>
+        <td class='droite'>{{com.note}}</td>
+        <td><a href="{{ path('commentaire_edit',{id:com.id}) }}">Modifier</a>
+            <a href="{{ path('commentaire_delete',{id:com.id}) }}">Supprimer</a>
+        </td>
+        </tr>
+    {% endfor %}
+    </table>
+    <div class='lienB'>{{ knp_pagination_render(articles) }}</div>
+{% endblock %}

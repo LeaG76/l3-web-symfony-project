@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/visualisationEta.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}Entité Etablissement{% endblock %}
+
+{% block body %}
+    <h1>Entité Etablissement</h1>
+    <h2>{{vu}}</h2>
+    <h3>Filtres</h3>
+    <div class='liens'><a href="{{ path('etablissement_showall') }}">Toute la table</a>
+    <a href="{{ path('etablissement_nature',{nature:'LYCEE GENERAL ET TECHNOLOGIQUE'}) }}">Nature</a>
+    <a href="{{ path('etablissement_secteur',{secteur:'Public'}) }}">Secteur</a>
+    <a href="{{ path('etablissement_departement',{departement:76}) }}">Département</a>
+    <a href="{{ path('etablissement_commune',{commune:'Lillebonne'}) }}">Commune</a>
+    <a href="{{ path('etablissement_region',{region:'Normandie'}) }}">Région</a>
+    <a href="{{ path('etablissement_academie',{academie:'Rouen'}) }}">Académie</a>
+    </div>
+    <h3>Action</h3>
+    <div class='liens'><a href="{{ path('etablissement_add') }}">Ajouter un établissement</a>
+    </div>
+    <h3>Cartographie</h3>
+    <div class='liens'>
+    <a href="{{ path('cartographie') }}">Formulaire de la cartographie</a>
+    <a href="{{ path('cartographie_commune',{commune:'Rouen'}) }}">Controlleur de la cartographie</a>
+    </div>
+    <div class='lienH'>{{ knp_pagination_render(articles) }}</div>
+    <table border=1><tr><th>id</th><th>nom</th><th>nature</th><th>secteur</th><th>longitude</th><th>latitude</th>
+    <th>adresse</th><th>departement</th><th>commune</th><th>region</th>
+    <th>academie</th><th>date_ouverture</th><th>commentaires</th><th>actions</th></tr><tr>
+    {% for etab in articles %}
+        <td class='gauche'>{{etab.id}}</td>
+        <td class='gauche'>{{etab.nom}}</td>
+        <td class='gauche'>{{etab.nature}}</td>
+        <td class='droite'>{{etab.secteur}}</td>
+        <td class='droite'>{{etab.longitude}}</td>
+        <td class='droite'>{{etab.latitude}}</td>
+        <td class='gauche'>{{etab.adresse}}</td>
+        <td class='droite'>{{etab.departement}}</td>
+        <td class='gauche'>{{etab.commune}}</td>
+        <td class='gauche'>{{etab.region}}</td>
+        <td class='gauche'>{{etab.academie}}</td>
+        <td class='droite'>{{etab.dateOuverture}}</td>
+        <td><a href="{{ path('commentaireEtab_show',{id:etab.id}) }}">Voir</a>
+            <a href="{{ path('commentaireEtab_showToEdit',{id:etab.id}) }}">Modifier</a>
+            <a href="{{ path('commentaireEtab_add',{id:etab.id}) }}">Ajouter</a>
+        </td>
+        <td><a href="{{ path('etablissement_edit',{id:etab.id}) }}">Modifier</a>
+            <a href="{{ path('etablissement_delete',{id:etab.id}) }}">Supprimer</a>
+        </td>
+        </tr>
+    {% endfor %}
+    </table>
+    <div class='lienB'>{{ knp_pagination_render(articles) }}</div>
+{% endblock %}

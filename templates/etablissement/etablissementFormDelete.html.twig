@@ -1,0 +1,22 @@
+{% extends 'baseForm.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/visualisationForm.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}Formulaire Etablissement{% endblock %}
+
+{% block body %}
+    <div>
+    <h1 class='text-dark'>Formulaire Etablissement</h1>
+
+    <h2 class='text-secondary'>{{vu}}</h2>
+
+    <p>Etablissement supprimé !<p>
+
+    <p class="pull-right">
+        <a class='text-dark' href="{{ path('etablissement_showall') }}"><span class="glyphicon glyphicon-th-list"></span> Retour à la table Etablissement</a>
+    </p>
+    </div>
+
+{% endblock %}

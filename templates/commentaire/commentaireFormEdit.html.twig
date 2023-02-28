@@ -1,0 +1,43 @@
+{% extends 'baseForm.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/visualisationForm.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}Formulaire Commentaire{% endblock %}
+
+{% block body %}
+    <div>
+    <h1 class='text-dark'>Formulaire Commentaire</h1>
+
+    <h2 class='text-secondary'>{{vu}}</h2>
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.nom_auteur) }}
+    {{ form_help(form.nom_auteur) }}
+
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.date_creation) }}
+            {{ form_help(form.date_creation) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.note) }}
+            {{ form_help(form.note) }}
+        </div>
+    </div>
+
+    {{ form_row(form.texte) }}
+    {{ form_help(form.texte) }}
+
+    {{ form_row(form.save, { 'label': 'Modifier le commentaire' }) }}
+{{ form_end(form) }}
+
+    <p class="pull-right">
+        <a class='text-dark' href="{{ path('commentaire_showall') }}"><span class="glyphicon glyphicon-th-list"></span> Retour à la table Commentaire</a>
+    </p>
+    </div>
+
+{% endblock %}

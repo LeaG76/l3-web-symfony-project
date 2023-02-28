@@ -1,0 +1,44 @@
+{% extends 'baseMap.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/visualisationVue.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}Cartographie{% endblock %}
+
+{% block body %}
+    <h1>Cartographie</h1>
+
+    <p class = 'saisi'>Commune : {{vu}}<p>
+    <p class="pull-right">
+        <a href="{{ path('cartographie') }}"> Saisir une nouvelle commune</a>
+    </p>
+    <p class="pull-right">
+        <a href="{{ path('etablissement_showall') }}"> Retour à la table Etablissement</a> 
+    </p>
+    <div id="map" style="height: 500px;"></div>
+    <script>
+        const draw_map = (data) => {  
+        const map = L.map('map')
+            .fitBounds(data.map((d) => [d.lat,d.lon]))
+            .addLayer(L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }));
+        data.forEach((etablissement) => {
+            L.marker([etablissement.lat, etablissement.lon]).addTo(map).bindPopup("<b>"+etablissement.nom+"</b>");
+        });
+        };
+
+    const data = [
+        {%  for etab in etablissements %}
+            {
+                nom:'{{ etab.nom }}',
+                lat:'{{ etab.latitude }}',
+                lon:'{{ etab.longitude }}'
+            },
+        {%  endfor %}
+    ];
+
+    draw_map(data);
+    </script>
+{% endblock %}

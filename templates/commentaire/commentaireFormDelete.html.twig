@@ -1,0 +1,22 @@
+{% extends 'baseForm.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/visualisationForm.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}Formulaire Commentaire{% endblock %}
+
+{% block body %}
+    <div>
+    <h1 class='text-dark'>Formulaire Commentaire</h1>
+
+    <h2 class='text-secondary'>{{vu}}</h2>
+
+    <p>Commentaire supprimé !<p>
+
+    <p class="pull-right">
+        <a class='text-dark' href="{{ path('commentaire_showall') }}"><span class="glyphicon glyphicon-th-list"></span> Retour à la table Commentaire</a>
+    </p>
+    </div>
+
+{% endblock %}

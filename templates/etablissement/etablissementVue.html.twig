@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/visualisation.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <h1>Entité Etablissement</h1>
+    <h2>{{vu}}</h2>
+    <table border=1><tr><th>id</th><th>nom</th><th>nature</th><th>secteur</th><th>longitude</th><th>latitude</th>
+    <th>adresse</th><th>departement</th><th>commune</th><th>region</th>
+    <th>academie</th><th>date_ouverture</th><th>commentaires</th></tr><tr>
+    {% for etab in etablissements %}
+        <td class='gauche'>{{etab.id}}</td>
+        <td class='gauche'>{{etab.nom}}</td>
+        <td class='gauche'>{{etab.nature}}</td>
+        <td class='droite'>{{etab.secteur}}</td>
+        <td class='droite'>{{etab.longitude}}</td>
+        <td class='droite'>{{etab.latitude}}</td>
+        <td class='gauche'>{{etab.adresse}}</td>
+        <td class='droite'>{{etab.departement}}</td>
+        <td class='gauche'>{{etab.commune}}</td>
+        <td class='gauche'>{{etab.region}}</td>
+        <td class='gauche'>{{etab.academie}}</td>
+        <td class='droite'>{{etab.dateOuverture}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

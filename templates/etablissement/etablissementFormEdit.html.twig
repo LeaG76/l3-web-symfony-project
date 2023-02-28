@@ -1,0 +1,70 @@
+{% extends 'baseForm.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/visualisationForm.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}Formulaire Etablissement{% endblock %}
+
+{% block body %}
+    <div>
+    <h1 class='text-dark'>Formulaire Etablissement</h1>
+
+    <h2 class='text-secondary'>{{vu}}</h2>
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.nom) }}
+    {{ form_help(form.nom) }}
+
+    {{ form_row(form.nature) }}
+    {{ form_help(form.nature) }}
+
+    {{ form_row(form.secteur) }}
+    {{ form_help(form.secteur) }}
+
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.longitude) }}
+            {{ form_help(form.longitude) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.latitude) }}
+            {{ form_help(form.latitude) }}
+        </div>
+    </div>
+
+    {{ form_row(form.adresse) }}
+    {{ form_help(form.adresse) }}
+
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.departement) }}
+            {{ form_help(form.departement) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.commune) }}
+            {{ form_help(form.commune) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.region) }}
+            {{ form_help(form.region) }}
+        </div>
+    </div>
+
+    {{ form_row(form.academie) }}
+    {{ form_help(form.academie) }}
+
+    {{ form_row(form.date_ouverture) }}
+    {{ form_help(form.date_ouverture) }}
+
+    {{ form_row(form.save, { 'label': "Modifier l'établissement" }) }}
+{{ form_end(form) }}
+
+    <p class="pull-right">
+        <a class='text-dark' href="{{ path('etablissement_showall') }}"><span class="glyphicon glyphicon-th-list"></span> Retour à la table Etablissement</a>
+    </p>
+    </div>
+
+{% endblock %}
