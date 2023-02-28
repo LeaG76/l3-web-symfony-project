@@ -6,6 +6,7 @@
 <p align="center">
   <img alt="CSS3" src="https://img.shields.io/badge/-CSS3-0068BA?style=flat&logo=css3&logoColor=white" />
   <img alt="PHP" src="https://img.shields.io/badge/-PHP-7377AD?style=flat&logo=php&logoColor=white" />
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/-PostgreSQL-31648C?style=flat&logo=postgresql&logoColor=white" />
   <img alt="Shell" src="https://img.shields.io/badge/-Shell-121011?style=flat&logo=gnu-bash&logoColor=white" />
   <img alt="Symfony" src="https://img.shields.io/badge/-Symfony-000000?style=flat&logo=symfony&logoColor=white" />
   <img alt="Twig" src="https://img.shields.io/badge/-Twig-BCCF27?style=flat&logo=twig&logoColor=white" />
@@ -14,11 +15,11 @@
 <table>
     <thead>
         <tr>
-            <th width="150px">Year</th>
-            <th width="150px">Course</th>
+            <th width="300px">Year</th>
+            <th width="300px">Course</th>
             <th width="300px">Subject</th>
             <th width="300px">Project</th>
-            <th width="350px">Collaborators</th>
+            <th width="300px">Collaborators</th>
         </tr>
     </thead>
     <tbody>
