@@ -176,3 +176,7 @@ symfony server:start
 ```
 
 The site can be viewed in a browser at [http://localhost:8000](http://localhost:8000).
+
+## Sources
+
+Link to the Github repository of Mr. Pigné's web development course: https://github.com/pigne/teaching
