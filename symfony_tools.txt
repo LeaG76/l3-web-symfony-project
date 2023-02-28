@@ -1,0 +1,35 @@
+symfony new my_project_directory --webapp (create a symfony project with traditionnal webapp)
+symfony server:start (start the server) => http://127.0.0.1:8000 (home)
+symfony server:stop (stop the server)
+
+# generate some code #
+composer require symfony/orm-pack
+composer require --dev symfony/maker-bundle
+
+# database #
+php bin/console doctrine:database:create # create the database with given name in .env file
+php bin/console make:entity # create a tuple/table/entity (follow the prompt command line)
+php bin/console make:migration # update database
+php bin/console doctrine:migrations:diff # update changes on database
+php bin/console doctrine:migrations:migrate # run the sql query to update
+
+# controller #
+php bin/console make:controller controllerName # create a controller (it's better to have a logical name)
+composer require sensio/framework-extra-bundle # automatic SQL query
+php bin/console make:crud # create, read, update, delete in controller
+php bin/console make:form # make form in other class dedicated to
+
+# forms #
+composer require symfony/form # use dedied classes for forms
+
+# security #
+composer require symfony/security-bundle # use security tools
+composer require --dev symfony/profiler-pack # firewall
+php bin/console make:user # make a user with login and password
+composer require symfonycasts/verify-email-bundle # check email
+php bin/console make:registration-form # registration controller
+php bin/console security:hash-password # manual hash of password
+
+# tools #
+composer require --dev symfony/profiler-pack # hide toolbar
+
