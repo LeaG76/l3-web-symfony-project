@@ -77,7 +77,7 @@ mkdir -p ${HOME}/.composer/bin
 wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q | php -- --install-dir=${HOME}/.composer/bin --filename=composer
 ```
 
-We then modify the environment variable $PATH so that the composer executable is available everywhere by adding the following line to the file ${HOME}/.profile
+We then modify the environment variable $PATH so that the composer executable is available everywhere by adding the following line to the file `${HOME}/.profile`
 
 ```
 export PATH="$HOME/.composer/bin:$PATH"
