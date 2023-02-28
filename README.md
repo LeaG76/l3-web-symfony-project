@@ -82,6 +82,7 @@ We then modify the environment variable $PATH so that the composer executable is
 ```
 export PATH="$HOME/.composer/bin:$PATH"
 ```
+
 #### Symfony
 
 To install Symfony follow the instructions depending on the OS used: https://symfony.com/download
