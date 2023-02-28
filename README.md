@@ -125,6 +125,13 @@ DATABASE_URL="postgresql://db_user:db_password@127.0.0.1:3306/db_name?serverVers
 DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=mariadb-10.3.27"
 ```
 
+Then run the following commands to create the database:
+
+```
+php bin/console doctrine:database:create
+php bin/console doctrine:schema:create
+```
+
 ## Get started
 
 ### Project structure
