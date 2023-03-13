@@ -170,6 +170,12 @@ php bin/console doctrine:schema:create
 
 ### Start app
 
+```bash
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+php bin/console doctrine:fixtures:load
+```
+
 The next step is to start the application. We use PHP's internal web server rather than Apache for development.
 
 ```bash
