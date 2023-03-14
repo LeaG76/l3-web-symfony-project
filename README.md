@@ -45,9 +45,21 @@ The data displayed for each establishment were as follows: identifier, name, nat
 
 ## Requirements
 
-- PHP >= 7.2.5
-- Symfony = 5.2
-- A database server (PostgreSQL or MariaDB)
+<p align="center">
+  <a href="https://www.php.net/downloads.php">
+      <img alt="PHP" src="https://img.shields.io/badge/-7.2.5-7377AD?style=flat&logo=php&logoColor=white" />
+  </a>
+  <a href="https://symfony.com/download">
+      <img alt="Symfony" src="https://img.shields.io/badge/-5.2-000000?style=flat&logo=symfony&logoColor=white" />
+  </a>
+  <a href="https://www.postgresql.org/download">
+      <img alt="PostgreSQL" src="https://img.shields.io/badge/-PostgreSQL-31648C?style=flat&logo=postgresql&logoColor=white" />
+  </a>
+  (or
+  <a href="https://mariadb.org/download">
+      <img alt="MariaDB" src="https://img.shields.io/badge/-MariaDB-BA7257?style=flat&logo=mariadb&logoColor=white" />
+  </a>)
+</p>
 
 ### Installing Symfony
 
